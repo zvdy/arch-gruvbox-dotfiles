@@ -14,9 +14,9 @@ This repository contains my [Arch Linux](https://archlinux.org/) Gruvbox-themed 
 
 For code editing, I use [Neovim](https://github.com/neovim/neovim) with [LazyVim](https://www.lazyvim.org/). The configuration for LazyVim is located at [/config/nvim/lua/config/lazy.lua](/config/nvim/lua/config/lazy.lua) and utilizes the Gruvbox theme developed by [morhetz](https://github.com/morhetz/gruvbox).
 
-### Window Manager
+### Term Manager
 
-As a window manager, I use [Tmux](https://github.com/tmux/tmux/wiki) with the [Tmux Plugin Manager (TPM)](https://github.com/tmux-plugins/tpm) to install add-ons, including the Gruvbox theme developed by [egel](https://github.com/egel/tmux-gruvbox). The configuration file for Tmux is located at [/config/.tmux.conf](/config/.tmux.conf) and for TPM at [/config/tmux/**](/config/tmux/).
+As a terminal manager and multiplexer, I use [Tmux](https://github.com/tmux/tmux/wiki) with the [Tmux Plugin Manager (TPM)](https://github.com/tmux-plugins/tpm) to install add-ons, including the Gruvbox theme developed by [egel](https://github.com/egel/tmux-gruvbox). The configuration file for Tmux is located at [/config/.tmux.conf](/config/.tmux.conf) and for TPM at [/config/tmux/**](/config/tmux/).
 
 ### Browser
 
