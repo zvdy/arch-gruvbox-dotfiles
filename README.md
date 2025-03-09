@@ -1,25 +1,27 @@
 # Gruvbox Arch Linux Hyprland Dotfiles
 
-This repository contains my [arch linux](https://archlinux.org/) gruvbox themed setup and software I useon a daily basis, It aims to be a simple minimal eye appealing workflow and environment.
+This repository contains my [Arch Linux](https://archlinux.org/) Gruvbox-themed setup and the software I use daily. It aims to provide a simple, minimal, and visually appealing workflow and environment.
 
-# General
+## General
 
-![general](images/general.png)
+![General](images/general.png)
 
 ## Workflow
 
-![work](/images/workflow.png)
+![Workflow](/images/workflow.png)
 
-### Code editor
-As Code editor, I use [neovim](https://github.com/neovim/neovim) with [lazyvim](https://www.lazyvim.org/) 
+### Code Editor
 
-The configuration for lazy is under [/config/nvim/lua/config/lazy.lua](/config/nvim/lua/config/lazy.lua) and it udilizes the gruvbox theme developed from [morhetz](https://github.com/morhetz/gruvbox).
+For code editing, I use [Neovim](https://github.com/neovim/neovim) with [LazyVim](https://www.lazyvim.org/). The configuration for LazyVim is located at [/config/nvim/lua/config/lazy.lua](/config/nvim/lua/config/lazy.lua) and utilizes the Gruvbox theme developed by [morhetz](https://github.com/morhetz/gruvbox).
 
-### Window manager 
+### Window Manager
 
-As a workflow window manager I use [tmux](https://github.com/tmux/tmux/wiki) with [tpm(Tmux Plugin Manager)](https://github.com/tmux-plugins/tpm) to install add-ons, such as the gruvbox theme which was developed by [egel](https://github.com/egel/tmux-gruvbox).
+As a window manager, I use [Tmux](https://github.com/tmux/tmux/wiki) with the [Tmux Plugin Manager (TPM)](https://github.com/tmux-plugins/tpm) to install add-ons, including the Gruvbox theme developed by [egel](https://github.com/egel/tmux-gruvbox). The configuration file for Tmux is located at [/config/.tmux.conf](/config/.tmux.conf) and for TPM at [/config/tmux/**](/config/tmux/).
 
-## Browser
-The main browser I use is [firefox](https://www.mozilla.org/en-US/). with the [Gruvbox by rgnx theme](https://addons.mozilla.org/en-US/firefox/addon/gruvboxtheme/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
+### Browser
 
-For the home page, i use the open source [night tab extension](https://github.com/zombieFox/nightTab).
+My primary browser is [Firefox](https://www.mozilla.org/en-US/), with the [Gruvbox by rgnx theme](https://addons.mozilla.org/en-US/firefox/addon/gruvboxtheme/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search). For the home page, I use the open-source [Night Tab extension](https://github.com/zombieFox/nightTab).
+
+### Music
+
+I use Spotify for listening to music and podcasts, with the [Spicetify](https://github.com/spicetify) add-on to implement themes. I use the [Skaytacium/Gruvify](https://github.com/Skaytacium/Gruvify) theme.
