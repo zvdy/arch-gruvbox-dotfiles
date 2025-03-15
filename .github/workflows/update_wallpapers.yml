@@ -8,10 +8,14 @@ on:
 jobs:
   update-wallpapers:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Update WALLPAPERS.md
       run: |
@@ -21,6 +25,9 @@ jobs:
         # Define the images folder and the output markdown file
         IMAGES_FOLDER="images/wallpapers"
         WALLPAPERS_MD="docs/WALLPAPERS.md"
+        
+        # Create docs directory if it doesn't exist
+        mkdir -p docs
 
         # Start writing the markdown content
         echo "# Wallpapers" > $WALLPAPERS_MD
@@ -28,21 +35,37 @@ jobs:
         echo "Here is a list of all wallpapers in the images folder:" >> $WALLPAPERS_MD
         echo "" >> $WALLPAPERS_MD
 
+        # Get a list of all images in the folder
+        image_files=$(find $IMAGES_FOLDER -type f -name "*")
+        
         # Add each image to the markdown content
-        for image_file in $IMAGES_FOLDER/*; do
+        while IFS= read -r image_file; do
           if [[ -f "$image_file" ]]; then
             image_name=$(basename "$image_file")
-            echo "![$image_name]($image_file)" >> $WALLPAPERS_MD
+            echo "Processing: $image_name"
+            echo "![$image_name](/$image_file)" >> $WALLPAPERS_MD
             echo "" >> $WALLPAPERS_MD
           fi
+        done <<< "$image_files"
+        
+        # Verify all images are referenced
+        echo "Verifying all images are referenced correctly..."
+        for img in $IMAGES_FOLDER/*; do
+          if [[ -f "$img" ]]; then
+            img_name=$(basename "$img")
+            if ! grep -q "!\\[$img_name\\]" "$WALLPAPERS_MD"; then
+              echo "Error: Image $img_name is not properly referenced in $WALLPAPERS_MD"
+              exit 1
+            fi
+          fi
         done
+        
+        echo "All images verified successfully!"
 
     - name: Commit changes
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git add docs/WALLPAPERS.md
-        git commit -m 'Update WALLPAPERS.md with new images'
+        git commit -m 'Update WALLPAPERS.md with new images' || echo "No changes to commit"
         git push
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
