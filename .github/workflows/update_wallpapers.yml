@@ -3,7 +3,7 @@ name: Update WALLPAPERS.md
 on:
   push:
     paths:
-      - 'images/**'
+      - 'images/wallpapers/**'
 
 jobs:
   update-wallpapers:
@@ -19,7 +19,7 @@ jobs:
         set -e
 
         # Define the images folder and the output markdown file
-        IMAGES_FOLDER="images"
+        IMAGES_FOLDER="images/wallpapers"
         WALLPAPERS_MD="docs/WALLPAPERS.md"
 
         # Start writing the markdown content
