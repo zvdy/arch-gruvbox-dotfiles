@@ -2,6 +2,10 @@
 
 This repository contains my [Arch Linux](https://archlinux.org/) Gruvbox-themed setup and the software I use daily. It aims to provide a simple, minimal, and visually appealing workflow and environment.
 
+## Wallpapers
+
+All my Gruvbox themed wallpapers are available in [docs/WALLPAPERS.md](docs/WALLPAPERS.md).
+
 ## General
 
 ![General](images/general.png)
