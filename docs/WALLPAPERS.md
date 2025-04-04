@@ -6,6 +6,8 @@ Here is a list of all wallpapers in the images folder:
 
 ![nasa.png](/images/wallpapers/nasa.png)
 
+![pixel.png](/images/wallpapers/pixel.png)
+
 ![think_correctly.png](/images/wallpapers/think_correctly.png)
 
 ![not_av.png](/images/wallpapers/not_av.png)
